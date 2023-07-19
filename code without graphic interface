@@ -1,0 +1,28 @@
+import random
+import string
+
+def generate_password(length, complexity):
+    characters = ""
+
+    if "weak" in complexity.lower():
+        characters += string.ascii_letters
+    elif "medium" in complexity.lower():
+        characters += string.ascii_letters + string.digits
+    elif "strong" in complexity.lower():
+        characters += string.ascii_letters + string.digits + string.punctuation
+
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+
+
+def main():
+    print("Secure Password Generator")
+    print("- - - - - - - - - - - - - - - - - - - - -")
+    length = int(input("Enter the length of the password: "))
+    complexity = input("Enter the complexity (weak/medium/strong): ")
+    password = generate_password(length, complexity)
+    print("Generated password:", password)
+
+
+if __name__ == "__main__":
+    main()
