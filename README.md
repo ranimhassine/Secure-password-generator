@@ -1,4 +1,4 @@
-# Secure Password Generator   
+# Secure Password Generator    
   
 ## Overview
 A Python-based tool for generating strong, secure passwords with customizable complexity.
